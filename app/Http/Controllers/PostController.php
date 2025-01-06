@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index(Request $request): Response
     {
         $currentPage = $request->get('page', '1');
-        $cacheKey = "posts_list_page_" . $currentPage;
+        $cacheKey = 'posts_list_page_'.$currentPage;
 
         $posts = Cache::remember($cacheKey, 3600, function () {
             return Post::select(['ID', 'post_title', 'post_name'])
@@ -37,7 +37,7 @@ class PostController extends Controller
     public function view(Post $post): Response
     {
         return Inertia::render('Post/View', [
-            'title' => 'View Post - ' . $post->title,
+            'title' => 'View Post - '.$post->title,
             'post' => $post,
         ]);
     }
