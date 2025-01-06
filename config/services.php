@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'profile' => [
+        'facebook' => env('PROFILE_FACEBOOK', '#'),
+        'linkedin' => env('PROFILE_LINKEDIN', '#'),
+        'instagram' => env('PROFILE_INSTAGRAM', '#'),
+        'github' => env('PROFILE_GITHUB', '#'),
+        'twitter' => env('PROFILE_TWITTER', '#'),
+        'youtube' => env('PROFILE_YOUTUBE', '#'),
+    ],
 ];

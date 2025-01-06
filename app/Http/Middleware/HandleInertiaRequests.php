@@ -39,6 +39,14 @@ class HandleInertiaRequests extends Middleware
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),
             ],
+            'profile' => [
+                'facebook' => config('services.profile.facebook'),
+                'twitter' => config('services.profile.twitter'),
+                'instagram' => config('services.profile.instagram'),
+                'linkedin' => config('services.profile.linkedin'),
+                'github' => config('services.profile.github'),
+                'youtube' => config('services.profile.youtube'),
+            ],
         ];
     }
 }
