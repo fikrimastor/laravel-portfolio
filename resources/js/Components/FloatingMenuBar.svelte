@@ -40,7 +40,7 @@
   <div class="fixed inset-x-0 bottom-0 h-16 w-full bg-white to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-black">
 
   </div>
-  <div class="w-max p-2 rounded-full border pointer-events-auto relative z-50 mx-auto flex h-full min-h-full transform-gpu items-center bg-white dark:bg-black px-1 [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]">
+  <div class="w-max p-2 rounded-full border pointer-events-auto relative z-50 mx-auto flex h-full min-h-full transform-gpu items-center bg-white dark:bg-gray-900 px-1 [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]">
     <!-- Home -->
     <div class="flex aspect-square cursor-pointer items-center justify-center rounded-full" style="width: 40px;">
       <a aria-label="home" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full size-12" data-state="closed" href="{route('home')}">
