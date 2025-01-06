@@ -16,6 +16,7 @@ export default defineConfig({
     alias: {
         '@': resolve(__dirname, 'resources/js'),
         '~': resolve(__dirname, 'resources'),
+        'ziggy-js': resolve(__dirname, 'vendor/tightenco/ziggy'),
     },
     extensions: ['.js', '.svelte', '.json'],
 }
