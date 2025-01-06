@@ -14,17 +14,18 @@ class PostController extends Controller
     public function index(): Response
     {
         $posts = Post::select(['ID', 'post_title', 'post_name'])->published()->latest()->paginate(25);
+
         return Inertia::render('Post/List', [
             'title' => 'View Post',
             'posts' => $posts,
-//            'posts' => Post::select(['ID', 'post_title', 'post_name'])->published()->latest()->paginate(25),
-//            'list' => $posts,
-//            'posts' => $posts->transform(function (Post $post, int $key) {
-//                return [
-//                    'id' => $post->ID,
-//                    'title' => $post->title,
-//                ];
-//            }),
+            //            'posts' => Post::select(['ID', 'post_title', 'post_name'])->published()->latest()->paginate(25),
+            //            'list' => $posts,
+            //            'posts' => $posts->transform(function (Post $post, int $key) {
+            //                return [
+            //                    'id' => $post->ID,
+            //                    'title' => $post->title,
+            //                ];
+            //            }),
         ]);
     }
 
@@ -34,7 +35,7 @@ class PostController extends Controller
     public function view(Post $post): Response
     {
         return Inertia::render('Post/View', [
-            'title' => 'View Post - ' . $post->title,
+            'title' => 'View Post - '.$post->title,
             'post' => $post,
         ]);
     }

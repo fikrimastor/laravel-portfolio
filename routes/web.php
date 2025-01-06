@@ -6,23 +6,23 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::group([], function () {
-//    Route::get('/', function () {
-//        return Inertia::render('Welcome', [
-//            'canLogin' => Route::has('login'),
-//            'canRegister' => Route::has('register'),
-//            'laravelVersion' => Application::VERSION,
-//            'phpVersion' => PHP_VERSION,
-//        ]);
-//    });
+    //    Route::get('/', function () {
+    //        return Inertia::render('Welcome', [
+    //            'canLogin' => Route::has('login'),
+    //            'canRegister' => Route::has('register'),
+    //            'laravelVersion' => Application::VERSION,
+    //            'phpVersion' => PHP_VERSION,
+    //        ]);
+    //    });
 
     Route::get('/about', function () {
         return Inertia::render('About');
     })->name('about');
 
     Route::get('/', function () {
-        return Inertia::render('Home',[
+        return Inertia::render('Home', [
             'name' => 'Fikri Mastor',
-            'profilePhotoUrl' => 'https://avatars.githubusercontent.com/u/18373448?s=400&u=a59dc2346cf91fa4dbdee6c335aebeae72a5b943&v=4'
+            'profilePhotoUrl' => 'https://avatars.githubusercontent.com/u/18373448?s=400&u=a59dc2346cf91fa4dbdee6c335aebeae72a5b943&v=4',
         ]);
     })->name('home');
 
