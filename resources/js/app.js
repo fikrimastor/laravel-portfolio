@@ -6,7 +6,6 @@ import { mount } from 'svelte';
 import Layout from './Layouts/Public.svelte';
 
 createInertiaApp({
-    id: 'my-app',
     resolve: name => {
         const pages = import.meta.glob('./Pages/**/*.svelte', { eager: true })
         let page = pages[`./Pages/${name}.svelte`]
