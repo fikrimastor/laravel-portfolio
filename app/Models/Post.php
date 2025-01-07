@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Corcel\Model\Post as Corcel;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Post extends Corcel
 {
@@ -20,10 +21,18 @@ class Post extends Corcel
         'content',
         'image',
         'keywords',
+        'view_url',
     ];
 
     public function getRouteKeyName()
     {
         return 'post_name';
+    }
+
+    protected function viewUrl(): Attribute
+    {
+        return Attribute::get(
+            get: fn () => route('blog.view', ['post' => $this->post_name]),
+        );
     }
 }
