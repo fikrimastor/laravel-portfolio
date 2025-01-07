@@ -15,9 +15,13 @@ Route::group([], function () {
     //        ]);
     //    });
 
+    Route::get('/{post}', [\App\Http\Controllers\PostController::class, 'view'])->name('blog.view');
+
     Route::get('/about', function () {
         return Inertia::render('About');
     })->name('about');
+
+    Route::get('/blog', [\App\Http\Controllers\PostController::class, 'index'])->name('blog.index');
 
     Route::get('/', function () {
         return Inertia::render('Home', [
@@ -25,9 +29,6 @@ Route::group([], function () {
             'profilePhotoUrl' => 'https://avatars.githubusercontent.com/u/18373448?s=400&u=a59dc2346cf91fa4dbdee6c335aebeae72a5b943&v=4',
         ]);
     })->name('home');
-
-    Route::get('/blog', [\App\Http\Controllers\PostController::class, 'index'])->name('blog.index');
-    Route::get('/{post}', [\App\Http\Controllers\PostController::class, 'view'])->name('blog.view');
 });
 
 Route::get('/dashboard', function () {
