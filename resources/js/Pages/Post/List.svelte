@@ -25,7 +25,7 @@
           <ol type="1">
             {#each posts.data as post, i}
               <li class="dark:text-white mb-2 list-disc">
-                <Link class="hover:underline hover:text-blue-500" href="{ route('blog.view', post) }">
+                <Link class="hover:underline hover:text-blue-500" href="{ route('blog.view', { post: post }) }">
                   { post.title }
                 </Link>
               </li>
