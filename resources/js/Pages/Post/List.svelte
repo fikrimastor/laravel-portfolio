@@ -25,7 +25,7 @@
           <ol type="1">
             {#each posts.data as post, i}
               <li class="dark:text-white mb-2 list-disc">
-                <Link class="hover:underline hover:text-blue-500" href="#">
+                <Link class="hover:underline hover:text-blue-500" href="{ post.view_url }">
                   { post.title }
                 </Link>
               </li>

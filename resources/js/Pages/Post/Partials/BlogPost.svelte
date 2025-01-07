@@ -3,7 +3,7 @@
   export let classes = "", post;
 
   $: {
-    console.log(post.content);
+
   }
 </script>
 
