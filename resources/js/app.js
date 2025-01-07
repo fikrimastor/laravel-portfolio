@@ -7,9 +7,8 @@ import Layout from './Layouts/Public.svelte';
 
 createInertiaApp({
     resolve: name => {
-        const pages = import.meta.glob('./Pages/**/*.svelte', { eager: true })
-        let page = pages[`./Pages/${name}.svelte`]
-        return { default: page.default, layout: page.layout || Layout }
+        const pages = import.meta.glob('./Pages/**/*.svelte')
+        return pages[`./Pages/${name}.svelte`]()
     },
     setup({ el, App, props }) {
         mount(App, { target: el, props })
