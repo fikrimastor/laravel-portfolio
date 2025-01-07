@@ -22,8 +22,8 @@ class Post extends Corcel
         'keywords',
     ];
 
-//    public function getRouteKeyName()
-//    {
-//        return 'post_name';
-//    }
+    //    public function getRouteKeyName()
+    //    {
+    //        return 'post_name';
+    //    }
 }
