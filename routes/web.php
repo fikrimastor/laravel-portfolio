@@ -27,7 +27,7 @@ Route::group([], function () {
     })->name('home');
 
     Route::get('/blog', [\App\Http\Controllers\PostController::class, 'index'])->name('blog.index');
-    Route::get('/blog/{post}', [\App\Http\Controllers\PostController::class, 'view'])->name('blog.view');
+    Route::get('/{post}', [\App\Http\Controllers\PostController::class, 'view'])->name('blog.view');
 });
 
 Route::get('/dashboard', function () {

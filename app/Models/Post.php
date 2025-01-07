@@ -13,4 +13,17 @@ class Post extends Corcel
     protected $casts = [
         'content' => 'array',
     ];
+
+    protected $appends = [
+        'title',
+        'slug',
+        'content',
+        'image',
+        'keywords',
+    ];
+
+    public function getRouteKeyName()
+    {
+        return 'post_name';
+    }
 }
