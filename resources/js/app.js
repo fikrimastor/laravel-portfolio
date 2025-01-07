@@ -4,11 +4,6 @@ import './bootstrap.js';
 import { createInertiaApp } from '@inertiajs/svelte';
 import { mount } from 'svelte';
 import Layout from './Layouts/Public.svelte';
-import { route } from 'ziggy-js';
-import { Ziggy } from './ziggy.js';
-
-global.route = (name, params, absolute, config) =>
-  route(name, params, absolute, Ziggy);
 
 createInertiaApp({
     id: 'my-app',
