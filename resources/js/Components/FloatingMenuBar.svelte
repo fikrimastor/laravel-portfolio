@@ -1,5 +1,6 @@
 <script>
   import { page } from "@inertiajs/svelte";
+  const route = window.route;
 
   function toggle() {
     darkMode = ! darkMode;

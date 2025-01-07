@@ -4,6 +4,7 @@
   import { Link } from '@inertiajs/svelte';
   import Pagination from '@/Components/Pagination.svelte';
 	export let title, posts;
+  const route = window.route;
 </script>
 
 <svelte:head>

@@ -6,6 +6,7 @@
 	import { page, Link, useForm } from "@inertiajs/svelte";
 	let err = {};
 	export let errors = {};
+  const route = window.route;
 
 	export let mustVerifyEmail = false,
 			status,

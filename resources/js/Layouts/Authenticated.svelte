@@ -7,6 +7,7 @@
 	import { inertia, page, Link } from "@inertiajs/svelte";
 	let showingNavigationDropdown = false;
 	export let user = $page.props.auth.user;
+  const route = window.route;
 </script>
 
 <div>

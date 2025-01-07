@@ -12,6 +12,7 @@
 	let confirmingUserDeletion = false;
 
 	export let classes = "";
+  const route = window.route;
 
 	const form = useForm({
 		password: '',

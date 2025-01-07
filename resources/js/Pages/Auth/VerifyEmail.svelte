@@ -4,6 +4,7 @@
 	import { Link, useForm } from "@inertiajs/svelte";
 	let verificationLinkSent = false;
 	export let status;
+  const route = window.route;
 	const form = useForm({});
 	function onSubmit(e)  {
 		e.preventDefault();
