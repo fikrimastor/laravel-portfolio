@@ -19,7 +19,8 @@ class PostController extends Controller
         $cacheKey = 'posts_list_page_'.$currentPage;
 
         $posts = Cache::remember($cacheKey, 3600, function () {
-            return Post::select(['ID', 'post_title', 'post_name'])
+            return Post::select('ID', 'post_name', 'post_title')
+                ->without('meta')
                 ->published()
                 ->latest()
                 ->paginate(25);
