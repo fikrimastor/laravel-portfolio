@@ -24,11 +24,6 @@ class Post extends Corcel
         'view_url',
     ];
 
-    public function getRouteKeyName()
-    {
-        return 'post_name';
-    }
-
     protected function viewUrl(): Attribute
     {
         return Attribute::get(
