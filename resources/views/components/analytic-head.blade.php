@@ -24,7 +24,7 @@
 	<meta name="twitter:creator" content="@FikriMastor">
 	
     {{-- Fav Icon --}}
-	@php $assetUrl = config('app.asset_url'); @endphp
+	@php $assetUrl = config('app.wp_asset_url'); @endphp
 	@if(! is_null($assetUrl))
 		<link rel="icon" href="{{ $assetUrl }}/app/uploads/2016/10/cropped-FM-1-32x32.png" sizes="32x32">
 		<link rel="icon" href="{{ $assetUrl }}/app/uploads/2016/10/cropped-FM-1-192x192.png" sizes="192x192">

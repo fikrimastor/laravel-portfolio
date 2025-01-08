@@ -53,6 +53,7 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
+    'wp_asset_url' => env('WP_ASSET_URL', null),
 
     /*
     |--------------------------------------------------------------------------
