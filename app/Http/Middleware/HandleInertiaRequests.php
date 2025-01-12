@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Experience;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tighten\Ziggy\Ziggy;
@@ -40,12 +41,13 @@ class HandleInertiaRequests extends Middleware
                 'location' => $request->url(),
             ],
             'profile' => [
-                'facebook' => config('services.profile.facebook'),
-                'twitter' => config('services.profile.twitter'),
-                'instagram' => config('services.profile.instagram'),
-                'linkedin' => config('services.profile.linkedin'),
-                'github' => config('services.profile.github'),
-                'youtube' => config('services.profile.youtube'),
+                'facebook' => config('profile.facebook'),
+                'twitter' => config('profile.twitter'),
+                'instagram' => config('profile.instagram'),
+                'linkedin' => config('profile.linkedin'),
+                'github' => config('profile.github'),
+                'youtube' => config('profile.youtube'),
+                'experiences' => cache()->remember('experiences', 60 * 60, fn () => Experience::select(Experience::CACHE)->get()),
             ],
         ];
     }
