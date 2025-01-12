@@ -17,21 +17,21 @@ return [
             'company' => 'Company A',
             'website' => '#',
             'date' => '2019 - 2021',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien fermentum ultricies. Nullam nec nunc nec libero ultricies ultricies. Nullam nec nunc nec libero ultricies ultricies. Nullam nec nunc nec libero ultricies ultricies.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien fermentum ultricies. Nullam nec nunc nec libero ultricies ultricies. Nullam nec nunc nec libero ultricies ultricies. Nullam nec nunc nec libero ultricies ultricies.',
         ],
         2 => [
             'title' => 'Software Engineer',
             'company' => 'Company B',
             'website' => '#',
             'date' => '2017 - 2019',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien fermentum ultricies. Nullam nec nunc nec libero ultricies ultricies. Nullam nec nunc nec libero ultricies ultricies. Nullam nec nunc nec libero ultricies ultricies.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien fermentum ultricies. Nullam nec nunc nec libero ultricies ultricies. Nullam nec nunc nec libero ultricies ultricies. Nullam nec nunc nec libero ultricies ultricies.',
         ],
         3 => [
             'title' => 'Software Engineer',
             'company' => 'Company C',
             'website' => '#',
             'date' => '2015 - 2017',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien fermentum ultricies. Nullam nec nunc nec libero ultricies ultricies. Nullam nec nunc nec libero ultricies ultricies. Nullam nec nunc nec libero ultricies ultricies.'
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien fermentum ultricies. Nullam nec nunc nec libero ultricies ultricies. Nullam nec nunc nec libero ultricies ultricies. Nullam nec nunc nec libero ultricies ultricies.',
         ],
-    ]
+    ],
 ];

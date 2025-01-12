@@ -28,12 +28,12 @@ class Experience extends Model
             'start_at' => 'datetime',
             'end_at' => 'datetime',
             'is_current' => 'boolean',
-            'type' => ExperienceTypeEnum::class
+            'type' => ExperienceTypeEnum::class,
         ];
     }
 
     protected $appends = [
-        'service_duration'
+        'service_duration',
     ];
 
     public const CACHE = [
@@ -50,6 +50,6 @@ class Experience extends Model
 
     protected function serviceDuration(): Attribute
     {
-        return new Attribute(fn ($value) => $this->start_at?->format('M Y') . ' - ' . ($this->is_current ? 'Current' : $this->end_at?->format('M Y')));
+        return new Attribute(fn ($value) => $this->start_at?->format('M Y').' - '.($this->is_current ? 'Current' : $this->end_at?->format('M Y')));
     }
 }

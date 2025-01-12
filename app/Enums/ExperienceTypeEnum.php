@@ -13,6 +13,7 @@ enum ExperienceTypeEnum: string
         foreach (self::cases() as $case) {
             $array[$case->name] = $case->value;
         }
+
         return $array;
     }
 }
