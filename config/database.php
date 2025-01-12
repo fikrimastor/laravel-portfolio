@@ -114,13 +114,13 @@ return [
 
         'wordpress' => [ // for WordPress database (used by Corcel)
             'driver' => 'mysql',
-            'host' => env('DB_WP_HOST', '194.233.75.235:3306'),
-            'database' => env('DB_WP_DATABASE', 'fikmas'),
-            'username' => env('DB_WP_USERNAME', 'fikmas'),
-            'password' => env('DB_WP_PASSWORD', 'tPP}pK90%4=1^ExfSO=Hv9la3+I=:.~1MOxu5:ZcL529t'),
+            'host' => env('DB_WP_HOST', '127.0.0.1:3306'),
+            'database' => env('DB_WP_DATABASE', 'forge'),
+            'username' => env('DB_WP_USERNAME', 'forge'),
+            'password' => env('DB_WP_PASSWORD', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix' => env('DB_WP_USERNAME', 'afm91_'),
+            'prefix' => env('DB_WP_PREFIX', 'wp_'),
             'strict' => false,
             'engine' => null,
         ],
