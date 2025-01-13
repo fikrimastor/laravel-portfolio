@@ -5,10 +5,7 @@
 	<script id="facebook-jssdk" async="" src="//connect.facebook.net/en_US/sdk.js"></script>
 	<script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-PWN4T5S"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script id="website-schema"
-			type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"WebSite","name":"Fikri Mastor","alternateName":"Fikri Mastor","description":"Fikiranku","url":"https:\/\/fikrimastor.com","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/fikrimastor.com\/?s={search_term_string}"},"query-input":"required name=search_term_string"}}
-	</script>
-	<meta property="og:url" content="https://fikrimastor.com/">
+	<meta property="og:url" content="{{ config('app.url') }}">
 	<meta property="og:site_name" content="Fikri Mastor">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="website">
