@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*', 'https://www.fikrimastor.com'],
+    'allowed_origins' => ['https://www.fikrimastor.com', 'https://dev.fikrimastor.com'],
 
     'allowed_origins_patterns' => [],
 
