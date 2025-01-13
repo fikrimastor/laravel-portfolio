@@ -1,5 +1,5 @@
 <script>
-  import { page } from "@inertiajs/svelte";
+  import { page, Link } from "@inertiajs/svelte";
   const route = window.route;
 
   function toggle() {
@@ -44,17 +44,17 @@
   <div class="w-max p-2 rounded-full border pointer-events-auto relative z-50 mx-auto flex h-full min-h-full transform-gpu items-center bg-white dark:bg-gray-900 px-1 [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]">
     <!-- Home -->
     <div class="flex aspect-square cursor-pointer items-center justify-center rounded-full" style="width: 40px;">
-      <a aria-label="home" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full size-12" data-state="closed" href="{route('home')}">
+      <Link aria-label="home" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full size-12" data-state="closed" href="{route('home')}">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home size-4">
           <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
           <polyline points="9 22 9 12 15 12 15 22"></polyline>
         </svg>
-      </a>
+      </Link>
     </div>
 
     <!-- Blog -->
     <div class="flex aspect-square cursor-pointer items-center justify-center rounded-full" style="width: 40px;">
-      <a aria-label="blog" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full size-12" data-state="closed" href="{route('blog.index')}">
+      <Link aria-label="blog" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full size-12" data-state="closed" href="{route('blog.index')}">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook size-4">
           <path d="M2 6h4"></path>
           <path d="M2 10h4"></path><path d="M2 14h4"></path>
@@ -62,17 +62,17 @@
           <rect width="16" height="20" x="4" y="2" rx="2"></rect>
           <path d="M16 2v20"></path>
         </svg>
-      </a>
+      </Link>
     </div>
 
     <!-- Projects -->
     <div class="flex aspect-square cursor-pointer items-center justify-center rounded-full" style="width: 40px;">
-      <a aria-label="a" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full size-12" data-state="closed" href="{route('home')}">
+      <Link aria-label="a" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full size-12" data-state="closed" href="{route('home')}">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code size-4">
           <polyline points="16 18 22 12 16 6"></polyline>
           <polyline points="8 6 2 12 8 18"></polyline>
         </svg>
-      </a>
+      </Link>
     </div>
 
     <!-- Facebook -->
