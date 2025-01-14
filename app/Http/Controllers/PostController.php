@@ -35,10 +35,12 @@ class PostController extends Controller
     /**
      * Display the login view.
      */
-    public function view(Post $post): Response
+    public function view(Request $request, Post $post): Response
     {
+        $previousUrl = url()->previous() ?? route('blog.index');
         return Inertia::render('Post/View', [
             'title' => 'View Post - '.$post->title,
+            'previousUrl' => $previousUrl,
             'post' => $post,
         ]);
     }
