@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 class Post extends Corcel
 {
     public string $title;
+
     public string $post_title;
 
     protected $connection = 'wordpress';

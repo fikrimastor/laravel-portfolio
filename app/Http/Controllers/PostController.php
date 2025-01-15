@@ -38,8 +38,9 @@ class PostController extends Controller
     public function view(Request $request, Post $post): Response
     {
         $post->getAttribute('post_title');
+
         return Inertia::render('Post/View', [
-            'title' => 'View Post - '. $post->title,
+            'title' => 'View Post - '.$post->title,
             'previousUrl' => url()->previous(),
             'post' => $post,
         ]);
