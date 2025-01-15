@@ -37,11 +37,10 @@ class PostController extends Controller
      */
     public function view(Request $request, Post $post): Response
     {
-        $previousUrl = url()->previous() ?? route('blog.index');
-
+        $post->getAttribute('post_title');
         return Inertia::render('Post/View', [
-            'title' => 'View Post - '.$post->title,
-            'previousUrl' => $previousUrl,
+            'title' => 'View Post - '. $post->title,
+            'previousUrl' => url()->previous(),
             'post' => $post,
         ]);
     }

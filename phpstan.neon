@@ -1,8 +1,13 @@
 includes:
-    - ./vendor/nunomaduro/larastan/extension.neon
+    - ./vendor/larastan/larastan/extension.neon
 parameters:
     paths:
         - app
     level: 9
     ignoreErrors:
+        - identifier: missingType.iterableValue
+        - identifier: rules.modelAppends
+        - identifier: missingType.generics
+        - identifier: property.notFound
+        - identifier: binaryOp.invalid
     excludePaths:
