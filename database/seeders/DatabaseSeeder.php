@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
         User::factory()
             ->has(Experience::factory()->count(10), 'experiences')
             ->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password' => bcrypt('password'),
-        ]);
+                'name' => 'Test User',
+                'email' => 'test@example.com',
+                'password' => bcrypt('password'),
+            ]);
     }
 }

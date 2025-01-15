@@ -16,7 +16,7 @@ class ExperienceController extends Controller
     {
         return Inertia::render('Experience/List', [
             'title' => 'View Post',
-            'experiences' => Experience::all()
+            'experiences' => Experience::all(),
         ]);
     }
 
