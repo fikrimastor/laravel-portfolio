@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Experience;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,14 +16,12 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
+        User::factory()
+            ->has(Experience::factory()->count(10), 'experiences')
+            ->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => bcrypt('password'),
-        ]);
-
-        $this->call([
-            ExperienceSeeder::class,
         ]);
     }
 }
