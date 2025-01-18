@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreExperienceRequest;
 use App\Http\Requests\UpdateExperienceRequest;
 use App\Models\Experience;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class ExperienceController extends Controller
@@ -15,7 +16,7 @@ class ExperienceController extends Controller
     public function index()
     {
         return Inertia::render('Experience/List', [
-            'title' => 'View Post',
+            'title' => 'View Experiences',
             'experiences' => Experience::all(),
         ]);
     }
@@ -25,7 +26,9 @@ class ExperienceController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Experience/Create', [
+            'title' => 'Create New Experience',
+        ]);
     }
 
     /**
@@ -33,7 +36,16 @@ class ExperienceController extends Controller
      */
     public function store(StoreExperienceRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        auth()->user()->experiences()->create([
+            'entity_name' => $validated['entity_name'],
+            'type' => $validated['type'],
+            'entity_website_url' => $validated['entity_website_url'],
+            'is_active' => $validated['is_active'],
+        ]);
+
+        return Redirect::route('experience.index');
     }
 
     /**
@@ -65,6 +77,6 @@ class ExperienceController extends Controller
      */
     public function destroy(Experience $experience)
     {
-        //
+        return Redirect::route('experience.index');
     }
 }

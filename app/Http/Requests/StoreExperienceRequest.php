@@ -11,7 +11,7 @@ class StoreExperienceRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -22,7 +22,15 @@ class StoreExperienceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'entity_name' => ['required', 'string', 'max:255'],
+            'type' => ['required', 'string', 'max:255'],
+            'entity_website_url' => ['nullable', 'url'],
+//            'entity_logo_url' => ['nullable', 'url'],
+//            'start_at' => ['required', 'date'],
+//            'end_at' => ['required', 'date'],
+//            'role' => ['required', 'string', 'max:255'],
+//            'responsibility' => ['nullable', 'string'],
+            'is_active' => ['required', 'boolean'],
         ];
     }
 }
