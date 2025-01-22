@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreExperienceRequest;
 use App\Http\Requests\UpdateExperienceRequest;
 use App\Models\Experience;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 
 class ExperienceController extends Controller
@@ -38,12 +41,7 @@ class ExperienceController extends Controller
     {
         $validated = $request->validated();
 
-        auth()->user()->experiences()->create([
-            'entity_name' => $validated['entity_name'],
-            'type' => $validated['type'],
-            'entity_website_url' => $validated['entity_website_url'],
-            'is_active' => $validated['is_active'],
-        ]);
+        auth()->user()->experiences()->create($validated);
 
         return Redirect::route('experience.index')->with('success', 'Experience created successfully.');
     }
@@ -72,14 +70,15 @@ class ExperienceController extends Controller
      */
     public function update(UpdateExperienceRequest $request, Experience $experience)
     {
+        $inspect = Gate::inspect('update', $experience);
+        if ($inspect->denied()) {
+
+            throw new AuthorizationException($inspect->message(), 403);
+        }
+
         $validated = $request->validated();
 
-        $experience->update([
-            'entity_name' => $validated['entity_name'],
-            'type' => $validated['type'],
-            'entity_website_url' => $validated['entity_website_url'],
-            'is_active' => $validated['is_active'],
-        ]);
+        $experience->update($validated);
 
         return Redirect::route('experience.index')->with('success', 'Experience updated successfully.');
     }

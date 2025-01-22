@@ -7,6 +7,7 @@ use CleaniqueCoders\Traitify\Concerns\InteractsWithUuid;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Experience extends Model
 {
@@ -51,5 +52,10 @@ class Experience extends Model
     protected function serviceDuration(): Attribute
     {
         return new Attribute(fn ($value) => $this->start_at?->format('M Y').' - '.($this->is_current ? 'Current' : $this->end_at?->format('M Y')));
+    }
+
+    public function experienceable(): MorphTo
+    {
+        return $this->morphTo();
     }
 }

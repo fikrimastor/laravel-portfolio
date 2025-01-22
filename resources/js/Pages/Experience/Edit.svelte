@@ -6,8 +6,12 @@
   import InputLabel from '@/Components/Label.svelte';
   import { Link, useForm } from '@inertiajs/svelte';
   import TransitionButton from '@/Components/TransitionButton.svelte';
+  import BreezeValidationErrors from '@/Components/ValidationErrors.svelte';
+  import BreezeGuestLayout from '@/Layouts/Guest.svelte';
 
   export let title, experience;
+  let err = {};
+  export let errors = {};
 
   export let form = useForm({
     entity_name: experience.entity_name,
@@ -27,12 +31,19 @@
     { value: 'education', label: 'Education' }
   ];
 
+  $: {
+    err = errors;
+  }
+
   function submit(e) {
     e.preventDefault();
     $form.put(route('experience.update', experience), {
       preserveScroll: true,
       onSuccess: () => {
         $form.reset();
+      },
+      onError: () => {
+        console.log('error');
       }
     });
   }
@@ -48,6 +59,8 @@
   </h2>
 
   <div class="py-12">
+    <BreezeValidationErrors class="mb-4" errors={err} />
+
     <div class="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">
       <div
         class="bg-white p-4 shadow sm:rounded-lg sm:p-8 dark:bg-gray-800"

@@ -25,11 +25,11 @@ class StoreExperienceRequest extends FormRequest
             'entity_name' => ['required', 'string', 'max:255'],
             'type' => ['required', 'string', 'max:255'],
             'entity_website_url' => ['nullable', 'url'],
-            //            'entity_logo_url' => ['nullable', 'url'],
-            //            'start_at' => ['required', 'date'],
-            //            'end_at' => ['required', 'date'],
-            //            'role' => ['required', 'string', 'max:255'],
-            //            'responsibility' => ['nullable', 'string'],
+            'entity_logo_url' => ['nullable', 'url'],
+            'start_at' => ['nullable', 'date'],
+            'end_at' => ['nullable', 'date'],
+            'role' => ['nullable', 'string', 'max:255'],
+            'responsibility' => ['nullable', 'string'],
             'is_active' => ['required', 'boolean'],
         ];
     }
