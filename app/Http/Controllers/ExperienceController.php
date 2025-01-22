@@ -62,7 +62,7 @@ class ExperienceController extends Controller
     public function edit(Experience $experience)
     {
         return Inertia::render('Experience/Edit', [
-            'title' => 'Edit Experiences ' . $experience->entity_name,
+            'title' => 'Edit Experiences '.$experience->entity_name,
             'experience' => $experience,
         ]);
     }
