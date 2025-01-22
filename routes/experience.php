@@ -13,4 +13,5 @@ Route::group([
     Route::get('/create', 'create')->name('create');
     Route::post('/store', 'store')->name('store');
     Route::get('/{experience}/edit', 'edit')->name('edit');
+    Route::put('/{experience}/update', 'update')->name('update');
 });

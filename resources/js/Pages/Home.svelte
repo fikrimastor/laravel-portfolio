@@ -2,6 +2,7 @@
   import MainLayout from '@/Layouts/Public.svelte';
   import FloatingMenuBar from '@/Components/FloatingMenuBar.svelte';
   import { page } from '@inertiajs/svelte';
+  import GithubSponsorMinimal from '@/Components/GithubSponsorMinimal.svelte';
 
   export let profilePhotoUrl, name;
   export let experiences = $page.props.profile.experiences;
@@ -311,6 +312,8 @@
         </div>
       </div>
     </section>
+
+    <GithubSponsorMinimal/>
   </div>
 
   <FloatingMenuBar />

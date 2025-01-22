@@ -1,5 +1,7 @@
 <script>
 
+  import GithubSponsorLarge from '@/Components/GithubSponsorLarge.svelte';
+
   export let classes = "", post;
 
   $: {
@@ -22,12 +24,15 @@
       { post.title }
     </h1>
   </header>
-
-
   <div class="bg-white dark:bg-gray-800 shadow rounded-lg ">
     <div class="p-6 text-lg font-normal text-gray-900 dark:text-gray-100">
-      <!--{@html post.content }-->
-      {@html '<div>'}{@html post.content}{@html '</div>'}
+      <div class="space-y-3">
+        <GithubSponsorLarge/>
+
+        <!--{@html post.content }-->
+        {@html '<div>'}{@html post.content}{@html '</div>'}
+      </div>
     </div>
+
   </div>
 </section>

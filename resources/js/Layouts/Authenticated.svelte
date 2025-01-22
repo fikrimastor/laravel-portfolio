@@ -42,6 +42,12 @@
 							>
 								About
 							</BreezeNavLink>
+							<BreezeNavLink
+									href="{ route('experience.index') }"
+									active={$page.component === "Experience"}
+							>
+                Experience
+							</BreezeNavLink>
 						</div>
 					</div>
 
@@ -151,6 +157,12 @@
 							active={$page.component === "About"}
 					>
 						About
+					</BreezeResponsiveNavLink>
+					<BreezeResponsiveNavLink
+							href="{ route('experience.index') }"
+							active={$page.component === "Experience"}
+					>
+            Experience
 					</BreezeResponsiveNavLink>
 				</div>
 

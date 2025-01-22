@@ -7,18 +7,18 @@
   import { Link, useForm } from '@inertiajs/svelte';
   import TransitionButton from '@/Components/TransitionButton.svelte';
 
-  export let title;
+  export let title, experience;
 
   export let form = useForm({
-    entity_name: '',
-    type: '',
-    entity_website_url: null,
-    entity_logo_url: null,
-    start_at: null,
-    end_at: null,
-    role: null,
-    responsibility: null,
-    is_active: false,
+    entity_name: experience.entity_name,
+    type: experience.type,
+    entity_website_url: experience.entity_website_url,
+    entity_logo_url: experience.entity_logo_url,
+    start_at: experience.start_at,
+    end_at: experience.end_at,
+    role: experience.role,
+    responsibility: experience.responsibility,
+    is_active: experience.is_active,
     errors: {}
   });
 
@@ -29,7 +29,7 @@
 
   function submit(e) {
     e.preventDefault();
-    $form.post(route('experience.store'), {
+    $form.put(route('experience.update', experience), {
       preserveScroll: true,
       onSuccess: () => {
         $form.reset();
@@ -55,11 +55,11 @@
         <section>
           <header>
             <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-              New Profile Experience
+              Edit Profile Experience { experience.entity_name }
             </h2>
 
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-              Create a new experience for your profile.
+              Update an experience for your profile.
             </p>
           </header>
 

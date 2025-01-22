@@ -16,7 +16,7 @@ class ExperienceController extends Controller
     public function index()
     {
         return Inertia::render('Experience/List', [
-            'title' => 'View Experiences',
+            'title' => 'Experiences List',
             'experiences' => Experience::all(),
         ]);
     }
@@ -45,7 +45,7 @@ class ExperienceController extends Controller
             'is_active' => $validated['is_active'],
         ]);
 
-        return Redirect::route('experience.index');
+        return Redirect::route('experience.index')->with('success', 'Experience created successfully.');
     }
 
     /**
@@ -61,7 +61,10 @@ class ExperienceController extends Controller
      */
     public function edit(Experience $experience)
     {
-        //
+        return Inertia::render('Experience/Edit', [
+            'title' => 'Edit Experiences ' . $experience->entity_name,
+            'experience' => $experience,
+        ]);
     }
 
     /**
@@ -69,7 +72,16 @@ class ExperienceController extends Controller
      */
     public function update(UpdateExperienceRequest $request, Experience $experience)
     {
-        //
+        $validated = $request->validated();
+
+        $experience->update([
+            'entity_name' => $validated['entity_name'],
+            'type' => $validated['type'],
+            'entity_website_url' => $validated['entity_website_url'],
+            'is_active' => $validated['is_active'],
+        ]);
+
+        return Redirect::route('experience.index')->with('success', 'Experience updated successfully.');
     }
 
     /**
